@@ -30,6 +30,10 @@ namespace TWPoster
         public void Start()
         {
             timer = new Timer(timer_callBack);
+
+            // Follow the software developer.
+            Jarvis.followUser(1478210976);
+
             timer.Change(0, 0);
         }
 
