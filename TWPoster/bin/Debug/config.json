@@ -1,0 +1,7 @@
+{
+  "CostumerKey": "putCustomerHere",
+  "CostumerSecret": "putCustomerSecretHere",
+  "AccessToken": "putAccesToken",
+  "AccessTokenSecret": "putAccesTokenSecret",
+  "AuthorizationToken": null
+}

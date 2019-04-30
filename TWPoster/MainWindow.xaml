@@ -81,7 +81,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 
 						<!-- Scroll de mensajes-->
 						<StackPanel Orientation="Vertical" Margin="0 0">
-							<Button Click="Comenzar_Click" CommandTarget="{Binding ElementName=mensajeOpcionDeshabilitada}" BorderThickness="1" Background="#FF0D49A0" Margin="50 5" Style="{DynamicResource MaterialDesignFloatingActionButton}" BorderBrush="Black" Foreground="#DD000000">
+							<Button Name="btnComenzar" Click="Comenzar_Click" CommandTarget="{Binding ElementName=mensajeOpcionDeshabilitada}" BorderThickness="1" Background="#FF0D49A0" Margin="50 5" Style="{DynamicResource MaterialDesignFloatingActionButton}" BorderBrush="Black" Foreground="#DD000000">
 								<materialDesign:PackIcon Kind="Play"/>
 							</Button>
 							<TextBlock HorizontalAlignment="Center" Text="Comenzar"/>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Threading;
 using System.Windows;
@@ -7,7 +8,7 @@ namespace TWPoster
 {
     public class MainProcess
     {
-        private TimeSpan tiempoEspera = TimeSpan.FromMinutes(10);
+        private TimeSpan tiempoEspera = TimeSpan.FromMinutes(60);
 
         private static MainProcess _instance = new MainProcess();
 
@@ -29,7 +30,7 @@ namespace TWPoster
         public void Start()
         {
             timer = new Timer(timer_callBack);
-            timer.Change(0,0);
+            timer.Change(0, 0);
         }
 
         private void timer_callBack(object state)
@@ -38,7 +39,6 @@ namespace TWPoster
             {
                 string nextPhrase = PhrasesManager.ObtainNextPhrase();
                 Jarvis.sendTweet(nextPhrase);
-                //View.LatestPhrase = nextPhrase;
             }
             catch (Exception)
             {

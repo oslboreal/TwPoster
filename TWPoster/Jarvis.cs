@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using TweetSharp;
 using System.Threading;
-using System.IO;
 
 namespace TWPoster
 {
@@ -12,30 +11,20 @@ namespace TWPoster
         // Jarvis tools
         private static JarvisResponse jResponse;
         private static TwitterService mainService;
-
-        // Aux fields.
         private static List<TwitterUser> auxUserList;
         private static List<TwitterStatus> auxTwitList;
+        private static UserConfiguration config = UserConfiguration.GetConfiguration();
+
         public static long likeCount = 0;
         public static long followCount = 0;
         public static long unfollowCount = 0;
-
-        #region Connection Tokens
-        // Los siguientes Tokens fueron modificados par que queden en forma de ejemplo
-        // En el repositorio de Github pero son Obsoletos y no proveen acceso a ningun perfil de Tw.
-        private static string costumerKey = "53CIIvj79ls4DEl2U5IXqDuZ4";
-        private static string costumerSecret = "gS4cxM796meyPzr5YNrfJWmJCPZuaHkWTYdf45lFIiQA1XZAM6";
-        private static string accesToken = "1478210976-1MHM2GuHFEUKtujf3h8OoV7Zq8TlTWfNbPUSRuO";
-        private static string accesTokenSecret = "FAKPQKHi73rjH2VjUWayLA2KXc088eD9LpYG4NuNoR9dk";
-        #endregion
 
         /// <summary>
         /// Static constructor.
         /// </summary>
         static Jarvis()
         {
-            // Inicializamos el Servicio de Twitter empleando el uso de la lib TweetSharp.
-            Jarvis.mainService = new TwitterService(costumerKey, costumerSecret, accesToken, accesTokenSecret);
+            Jarvis.mainService = new TwitterService(config.CostumerKey, config.CostumerSecret, config.AccessToken, config.AccessTokenSecret);
         }
 
         #region Jarvis Methods

@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using System.Timers;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Configuration;
 
 namespace TWPoster
 {
@@ -29,6 +18,8 @@ namespace TWPoster
             InitializeComponent();
             timer.Interval = 300;
             timer.Elapsed += elapsedEventHandler;
+
+
         }
 
         private void UpdateLatestMessage(string message)
@@ -70,6 +61,7 @@ namespace TWPoster
         {
             timer.Start();
             MainProcess.Instance.Start();
+            btnComenzar.IsEnabled = false;
         }
 
         private void Info_Click(object sender, RoutedEventArgs e)
