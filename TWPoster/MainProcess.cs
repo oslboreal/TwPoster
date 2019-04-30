@@ -54,7 +54,7 @@ namespace TWPoster
             try
             {
                 //Jarvis.sendTweet(PhrasesManager.obtainNextPhrase());
-                string phrase = PhrasesManager.obtainNextPhrase();
+                string phrase = PhrasesManager.ObtainNextPhrase();
             }
             catch (Exception)
             {

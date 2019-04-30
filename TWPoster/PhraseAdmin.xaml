@@ -5,22 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TWPoster"
         mc:Ignorable="d"
-        Title="PhraseAdmin" Height="594.774" Width="370.992">
-	<Grid Margin="0,0,0,0">
+        Title="PhraseAdmin" Height="383.552" Width="370.992" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+	<Grid Margin="0,0,0,18" Background="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}">
 		<Grid.RowDefinitions>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
-		<ListBox x:Name="listBox" HorizontalAlignment="Left" Height="155" Margin="10,10,0,0" VerticalAlignment="Top" Width="343">
+		<ListBox x:Name="listBox" HorizontalAlignment="Left" Height="131" Margin="0,26,0,0" VerticalAlignment="Top" Width="363">
 			<ListBox.Background>
-				<SolidColorBrush Color="#FF3399FF"/>
+				<SolidColorBrush Color="White"/>
 			</ListBox.Background>
 		</ListBox>
-		<Button x:Name="button" Content="Eliminar" HorizontalAlignment="Center" Margin="0,5,0,190" VerticalAlignment="Center" Width="103" Background="#FF3399FF" RenderTransformOrigin="0.298,0.454"/>
-		<TextBox x:Name="textBox" HorizontalAlignment="Left" Height="155" Margin="10,215,10,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="343" Background="#FF3399FF"/>
-		<Button x:Name="boton" Content="Agregar" HorizontalAlignment="Center" Margin="130,400,130,358.5" VerticalAlignment="Center" Width="103" Background="#FF3399FF" RenderTransformOrigin="0.298,0.454"/>
+		<Button x:Name="button" Content="Eliminar" HorizontalAlignment="Center" Margin="-35,157,-28,150" VerticalAlignment="Center" Width="426" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" RenderTransformOrigin="0.298,0.454" BorderBrush="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}" FontWeight="Bold" Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
+		<TextBox x:Name="textBox" HorizontalAlignment="Left" Height="38" Margin="0,229,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="363" Background="White"/>
+		<Button x:Name="boton" Click="Boton_Click" Content="Agregar" HorizontalAlignment="Center" Margin="-35,267,-28,40" VerticalAlignment="Center" Width="426" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" RenderTransformOrigin="0.298,0.454" BorderBrush="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" FontWeight="Bold"/>
+		<Label x:Name="label" Content="Lista de frases disponibles - Available phrases list:
+			  " HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Background="Black" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
+		<Label x:Name="label1" Content="Agregar una nueva frase:" HorizontalAlignment="Left" Margin="0,203,0,0" VerticalAlignment="Top" Width="363" Background="Black" Foreground="{DynamicResource {x:Static SystemColors.InfoBrushKey}}"/>
 
 	</Grid>
 </Window>

@@ -85,9 +85,16 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PhraseAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Phrase.cs" />
+    <Compile Include="PhraseAdmin.xaml.cs">
+      <DependentUpon>PhraseAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PhrasesManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

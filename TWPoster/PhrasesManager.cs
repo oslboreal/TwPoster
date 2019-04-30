@@ -11,7 +11,13 @@ namespace TWPoster
 {
     static class PhrasesManager
     {
-        public static List<Phrase> Phrases { get; set; }
+        public static List<Phrase> Phrases
+        {
+            get
+            {
+                return ObtainAllPhrases();
+            }
+        }
 
         const string phrasesLatestIdFile = "latestPhraseId.json";
         const string phrasesFile = "phrases.json";
@@ -21,20 +27,20 @@ namespace TWPoster
 
         }
 
-        static bool saveNewPhrase(string content, string imagePath)
+        public static bool SaveNewPhrase(string content, string imagePath)
         {
             try
             {
                 if (!File.Exists(phrasesFile))
                     File.Create(phrasesFile).Close();
 
-                List<Phrase> phrases = obtainAllPhrases();
+                List<Phrase> phrases = ObtainAllPhrases();
 
                 Phrase p1 = new Phrase
                 {
                     ImagePath = imagePath,
                     Text = content,
-                    Id = obtainMaxId() + 1
+                    Id = ObtainMaxId() + 1
                 };
 
                 phrases.Add(p1);
@@ -53,7 +59,7 @@ namespace TWPoster
             }
         }
 
-        static List<Phrase> obtainAllPhrases()
+        static List<Phrase> ObtainAllPhrases()
         {
             if (File.Exists(phrasesFile))
             {
@@ -63,6 +69,9 @@ namespace TWPoster
                 // Obtains phrases.
                 List<Phrase> phrases = JsonConvert.DeserializeObject<List<Phrase>>(content);
 
+                if (phrases == null)
+                    phrases = new List<Phrase>();
+
                 return phrases;
             }
             else
@@ -71,9 +80,9 @@ namespace TWPoster
             }
         }
 
-        static int obtainMaxId()
+        static int ObtainMaxId()
         {
-            var phrases = obtainAllPhrases();
+            var phrases = ObtainAllPhrases();
 
             int maxId = 0;
 
@@ -84,7 +93,7 @@ namespace TWPoster
             return maxId;
         }
 
-        static public string obtainNextPhrase()
+        static public string ObtainNextPhrase()
         {
             if (!File.Exists("phrases.json"))
                 File.Create("phrases.json").Close();
@@ -103,7 +112,7 @@ namespace TWPoster
             return "";
         }
 
-        static int obtainLatestPhraseId()
+        static int ObtainLatestPhraseId()
         {
 
             // If the file that we use to know the id of the latest showed phrase doesn't exist.

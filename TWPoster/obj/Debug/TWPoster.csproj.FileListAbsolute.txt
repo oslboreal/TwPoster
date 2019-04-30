@@ -26,3 +26,5 @@ C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Debug\TWPoster.csproj.CoreC
 C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Debug\TWPoster.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Debug\TWPoster.exe
 C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Debug\TWPoster.pdb
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Debug\PhraseAdmin.g.cs
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Debug\PhraseAdmin.baml

@@ -60,5 +60,11 @@ namespace TWPoster
         {
             Process.Start("chrome.exe", "http://twposter.marcosvallejo.info");
         }
+
+        private void AdminPhrases_Click(object sender, RoutedEventArgs e)
+        {
+            PhraseAdmin window = new PhraseAdmin();
+            window.Show();
+        }
     }
 }
