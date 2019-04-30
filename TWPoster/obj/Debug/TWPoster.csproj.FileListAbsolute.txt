@@ -28,3 +28,8 @@ C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Debug\TWPoster.exe
 C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Debug\TWPoster.pdb
 C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Debug\PhraseAdmin.g.cs
 C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Debug\PhraseAdmin.baml
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\bin\Debug\AutoUpdater.exe
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\bin\Debug\FluentFTP.dll
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\bin\Debug\AutoUpdater.pdb
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\bin\Debug\AutoUpdater.exe.config
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\bin\Debug\FluentFTP.xml

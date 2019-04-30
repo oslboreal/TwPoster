@@ -27,3 +27,8 @@ C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Release\TWPoster.csproj.Cop
 C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Release\TWPoster.exe
 C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Release\TWPoster.pdb
 C:\Users\User\Documents\GitHub\TwPoster\TWPoster\obj\Release\TWPoster.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\bin\Release\AutoUpdater.exe
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\bin\Release\FluentFTP.dll
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\bin\Release\AutoUpdater.pdb
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\bin\Release\AutoUpdater.exe.config
+C:\Users\User\Documents\GitHub\TwPoster\TWPoster\bin\Release\FluentFTP.xml

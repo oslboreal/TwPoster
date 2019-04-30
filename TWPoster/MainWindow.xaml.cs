@@ -1,8 +1,9 @@
-﻿using System.Diagnostics;
+﻿using AutoUpdater;
+using System;
+using System.Diagnostics;
 using System.Timers;
 using System.Windows;
 using System.Windows.Input;
-using System.Configuration;
 
 namespace TWPoster
 {
@@ -15,11 +16,24 @@ namespace TWPoster
 
         public MainWindow()
         {
-            InitializeComponent();
-            timer.Interval = 300;
-            timer.Elapsed += elapsedEventHandler;
+            try
+            {
+                // Apenas inicializa el programa corroboramos que esté actualizado.
+                var verServer = VersionHelper.CorroborarVersion();
+                var verClient = VersionHelper.Version();
 
+                if (verServer != verClient)
+                {
+                    Process.Start("AutoUpdater.exe");
+                    Application.Current.Shutdown();
+                }
 
+                InitializeComponent();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha habido un error a la hora de verificar la version del programa, asegurese de estar conectado a internet.");
+            }
         }
 
         private void UpdateLatestMessage(string message)
@@ -29,7 +43,7 @@ namespace TWPoster
 
         private void elapsedEventHandler(object sender, ElapsedEventArgs e)
         {
-            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -62,6 +76,7 @@ namespace TWPoster
             timer.Start();
             MainProcess.Instance.Start();
             btnComenzar.IsEnabled = false;
+            btnFrases.IsEnabled = false;
         }
 
         private void Info_Click(object sender, RoutedEventArgs e)
