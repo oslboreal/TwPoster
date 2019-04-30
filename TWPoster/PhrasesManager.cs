@@ -48,9 +48,9 @@ namespace TWPoster
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // TODO : LOG.
+                File.WriteAllText("log_savephrase.err", ex.Message);
                 return false;
             }
         }

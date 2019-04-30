@@ -86,9 +86,16 @@ namespace TWPoster
         /// Follow a new user
         /// </summary>
         /// <returns>Boolean</returns>
-        public static void followUser(long id)
+        public static void followUser(TwitterUser user)
         {
-            mainService.FollowUser(new FollowUserOptions { UserId = id, Follow = false });
+            try
+            {
+                mainService.FollowUser(new FollowUserOptions { UserId = user.Id });
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         /// <summary>

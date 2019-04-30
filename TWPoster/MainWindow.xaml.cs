@@ -1,6 +1,7 @@
 ﻿using AutoUpdater;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Timers;
 using System.Windows;
 using System.Windows.Input;
@@ -25,13 +26,15 @@ namespace TWPoster
                 if (verServer != verClient)
                 {
                     Process.Start("AutoUpdater.exe");
+                    File.WriteAllText("verChange.err", $"{DateTime.Now} - Version difiere con el servidor.");
                     Application.Current.Shutdown();
                 }
 
                 InitializeComponent();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                File.WriteAllText("log.err", ex.Message);
                 MessageBox.Show("Ha habido un error a la hora de verificar la version del programa, asegurese de estar conectado a internet.");
             }
         }
