@@ -23,7 +23,7 @@ namespace TWPoster
         #region Connection Tokens
         // Los siguientes Tokens fueron modificados par que queden en forma de ejemplo
         // En el repositorio de Github pero son Obsoletos y no proveen acceso a ningun perfil de Tw.
-        private static string costumerKey = "RAQdM8ygaW8jxcyYZ3q2xCtwt";
+        private static string costumerKey = "53CIIvj79ls4DEl2U5IXqDuZ4";
         private static string costumerSecret = "gS4cxM796meyPzr5YNrfJWmJCPZuaHkWTYdf45lFIiQA1XZAM6";
         private static string accesToken = "1478210976-1MHM2GuHFEUKtujf3h8OoV7Zq8TlTWfNbPUSRuO";
         private static string accesTokenSecret = "FAKPQKHi73rjH2VjUWayLA2KXc088eD9LpYG4NuNoR9dk";
