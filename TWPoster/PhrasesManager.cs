@@ -95,35 +95,56 @@ namespace TWPoster
 
         static public string ObtainNextPhrase()
         {
-            if (!File.Exists("phrases.json"))
-                File.Create("phrases.json").Close();
+            Phrase found = null;
 
+            if (!File.Exists(phrasesFile))
+                File.WriteAllText(phrasesFile, "[]");
 
-            using (StreamReader reader = new StreamReader(phrasesLatestIdFile))
+            // Gets the next id and fetch all the phrases.
+            int nextId = GetNextId();
+            var phrases = ObtainAllPhrases();
+
+            // Look up for a phrase.
+            foreach (var item in phrases)
+                if (item.Id == nextId)
+                    found = item;
+
+            // If the phrase ain't here
+            if (found == null)
             {
-                string content = reader.ReadToEnd();
-                List<Phrase> phrases = JsonConvert.DeserializeObject<List<Phrase>>(content);
-                phrases.OrderBy(x => x.Id);
+                // Look up for a phrase.
+                foreach (var item in phrases)
+                    if (item.Id == 1)
+                        found = item;
 
-                MessageBox.Show(phrases.Count.ToString());
+                // The collection haven't phrases.
+                if(found == null)
+                    return null;
+
+                // Restar the next id.
+                SetNextId(2);
             }
 
-
-            return "";
+            return found.ToString();
         }
 
-        static int ObtainLatestPhraseId()
+        static private void SetNextId(int id)
         {
+            if (!File.Exists(phrasesLatestIdFile))
+                File.WriteAllText(phrasesLatestIdFile, "0");
+            else
+                File.WriteAllText(phrasesLatestIdFile, id.ToString());
+        }
+
+        static private int GetNextId()
+        {
+            int retorno = 0;
 
             // If the file that we use to know the id of the latest showed phrase doesn't exist.
             // Creates it.
             if (!File.Exists(phrasesLatestIdFile))
-            {
-                File.WriteAllText(phrasesLatestIdFile, "0");
-                File.Create(phrasesLatestIdFile).Close();
-            }
+                File.WriteAllText(phrasesLatestIdFile, retorno.ToString());
 
-            int retorno = 0;
             int.TryParse(File.ReadAllText(phrasesLatestIdFile), out retorno);
 
             return retorno;

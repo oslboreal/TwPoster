@@ -1,25 +1,20 @@
 ﻿using System;
 using System.IO;
 using System.Threading;
+using System.Windows;
 
 namespace TWPoster
 {
     public class MainProcess
     {
         private long timeInterval;
+        private static MainProcess _instance = new MainProcess();
 
         public static MainProcess Instance
         {
             get
             {
-                if (Instance == null)
-                    Instance = new MainProcess();
-
-                return Instance;
-            }
-            private set
-            {
-                Instance = value;
+                return _instance;
             }
         }
 
@@ -46,7 +41,7 @@ namespace TWPoster
         public void Start()
         {
             timer = new Timer(timer_callBack);
-            timer.Change(TimeSpan.MinValue, TimeSpan.MaxValue);
+            timer.Change(0,0);
         }
 
         private void timer_callBack(object state)
@@ -55,6 +50,7 @@ namespace TWPoster
             {
                 //Jarvis.sendTweet(PhrasesManager.obtainNextPhrase());
                 string phrase = PhrasesManager.ObtainNextPhrase();
+                MessageBox.Show(phrase); 
             }
             catch (Exception)
             {
@@ -62,7 +58,7 @@ namespace TWPoster
             }
             finally
             {
-                timer.Change(TimeSpan.MinValue, TimeSpan.MaxValue);
+                timer.Change(0, 0);
             }
         }
     }
