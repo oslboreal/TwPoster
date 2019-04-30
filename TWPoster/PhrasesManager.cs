@@ -36,12 +36,8 @@ namespace TWPoster
 
                 List<Phrase> phrases = ObtainAllPhrases();
 
-                Phrase p1 = new Phrase
-                {
-                    ImagePath = imagePath,
-                    Text = content,
-                    Id = ObtainMaxId() + 1
-                };
+                int nextId = ObtainMaxId() + 1;
+                Phrase p1 = new Phrase(nextId, content,imagePath);
 
                 phrases.Add(p1);
 
@@ -124,7 +120,8 @@ namespace TWPoster
                 // Restar the next id.
                 SetNextId(2);
             }
-
+            nextId = found.Id + 1;
+            SetNextId(nextId);
             return found.ToString();
         }
 

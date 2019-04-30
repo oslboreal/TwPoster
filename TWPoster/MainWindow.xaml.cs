@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,9 +22,23 @@ namespace TWPoster
     /// </summary>
     public partial class MainWindow : Window
     {
+        Timer timer = new Timer();
+
         public MainWindow()
         {
             InitializeComponent();
+            timer.Interval = 300;
+            timer.Elapsed += elapsedEventHandler;
+        }
+
+        private void UpdateLatestMessage(string message)
+        {
+            bloque.Text = message;
+        }
+
+        private void elapsedEventHandler(object sender, ElapsedEventArgs e)
+        {
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -53,6 +68,7 @@ namespace TWPoster
 
         private void Comenzar_Click(object sender, RoutedEventArgs e)
         {
+            timer.Start();
             MainProcess.Instance.Start();
         }
 

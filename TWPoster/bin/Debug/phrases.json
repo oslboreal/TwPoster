@@ -3,5 +3,15 @@
     "Id": 1,
     "Text": "Todo camino conduce a roma.",
     "ImagePath": ""
+  },
+  {
+    "Id": 2,
+    "Text": "El trabajo es tiempo, el tiempo es oro.",
+    "ImagePath": ""
+  },
+  {
+    "Id": 3,
+    "Text": "La felicidad es relativa, no pierdas tiempo predicando tus verdades o al menos si lo vas a hacer no olvides que son tuyas.",
+    "ImagePath": ""
   }
 ]

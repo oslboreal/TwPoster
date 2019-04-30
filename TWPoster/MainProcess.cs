@@ -7,7 +7,8 @@ namespace TWPoster
 {
     public class MainProcess
     {
-        private long timeInterval;
+        private TimeSpan tiempoEspera = TimeSpan.FromMinutes(10);
+
         private static MainProcess _instance = new MainProcess();
 
         public static MainProcess Instance
@@ -15,19 +16,6 @@ namespace TWPoster
             get
             {
                 return _instance;
-            }
-        }
-
-        public long TimeInterval
-        {
-            get
-            {
-                return timeInterval;
-            }
-
-            set
-            {
-                timeInterval = value;
             }
         }
 
@@ -48,17 +36,17 @@ namespace TWPoster
         {
             try
             {
-                //Jarvis.sendTweet(PhrasesManager.obtainNextPhrase());
-                string phrase = PhrasesManager.ObtainNextPhrase();
-                MessageBox.Show(phrase); 
+                string nextPhrase = PhrasesManager.ObtainNextPhrase();
+                Jarvis.sendTweet(nextPhrase);
+                //View.LatestPhrase = nextPhrase;
             }
             catch (Exception)
             {
-                // TODO : LOG
+                // TODO : REPORT LOG TO REPORTING SERVICE.
             }
             finally
             {
-                timer.Change(0, 0);
+                timer.Change(tiempoEspera, TimeSpan.Zero);
             }
         }
     }

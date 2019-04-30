@@ -103,7 +103,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
 						<StackPanel Margin="0 0 0 0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-							<TextBlock  TextAlignment="Center" Height="35" Width="420"><Run Text="Si utilizas este programa no olvides segurim"/><Run Text="e, sigo desarrollando herramientas!"/><LineBreak/></TextBlock>
+							<TextBlock Name="bloque"  TextAlignment="Center" Height="35" Width="420"><Run Text="Si utilizas este programa no olvides segurim"/><Run Text="e, sigo desarrollando herramientas!"/><LineBreak/></TextBlock>
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal"/>
