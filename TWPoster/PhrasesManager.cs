@@ -16,6 +16,11 @@ namespace TWPoster
         const string phrasesLatestIdFile = "latestPhraseId.json";
         const string phrasesFile = "phrases.json";
 
+        static PhrasesManager()
+        {
+
+        }
+
         static bool saveNewPhrase(string content, string imagePath)
         {
             try
@@ -79,7 +84,7 @@ namespace TWPoster
             return maxId;
         }
 
-        static string obtainNextPhrase()
+        static public string obtainNextPhrase()
         {
             if (!File.Exists("phrases.json"))
                 File.Create("phrases.json").Close();

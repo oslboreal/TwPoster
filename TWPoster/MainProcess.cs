@@ -40,32 +40,30 @@ namespace TWPoster
 
         public MainProcess()
         {
+
+        }
+
+        public void Start()
+        {
             timer = new Timer(timer_callBack);
-            timer.Change(0, 0);
-
-            // If the file that we use to know the position of the latest showed phrase doesnt exist.
-            // Creates it.
-            if (!File.Exists("latestPhrasePosition.json"))
-                File.Create("latestPhrasePosition.json").Close();
-
-            if (!File.Exists("phrases.json"))
-                File.Create("phrases.json").Close();
+            timer.Change(TimeSpan.MinValue, TimeSpan.MaxValue);
         }
 
         private void timer_callBack(object state)
         {
-            Jarvis.sendTweet(this.obtainNextPhrase());
-            throw new NotImplementedException();
-        }
-
-        private string obtainNextPhrase()
-        {
-            return "";
-        }
-
-        private int obtainLatestPhrasePosition()
-        {
-            return 0;
+            try
+            {
+                //Jarvis.sendTweet(PhrasesManager.obtainNextPhrase());
+                string phrase = PhrasesManager.obtainNextPhrase();
+            }
+            catch (Exception)
+            {
+                // TODO : LOG
+            }
+            finally
+            {
+                timer.Change(TimeSpan.MinValue, TimeSpan.MaxValue);
+            }
         }
     }
 }
