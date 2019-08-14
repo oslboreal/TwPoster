@@ -1,5 +1,4 @@
-﻿using AutoUpdater;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Timers;
@@ -19,17 +18,6 @@ namespace TWPoster
         {
             try
             {
-                // Apenas inicializa el programa corroboramos que esté actualizado.
-                var verServer = VersionHelper.CorroborarVersion();
-                var verClient = VersionHelper.Version();
-
-                if (verServer != verClient)
-                {
-                    Process.Start("AutoUpdater.exe");
-                    File.WriteAllText("verChange.err", $"{DateTime.Now} - Version difiere con el servidor.");
-                    Application.Current.Shutdown();
-                }
-
                 InitializeComponent();
             }
             catch (Exception ex)

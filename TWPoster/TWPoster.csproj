@@ -126,12 +126,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Desktop\Verdugamer\verdugamer-software\AutoUpdater\AutoUpdater.csproj">
-      <Project>{c711100b-f063-4b73-aac4-5fab28138b43}</Project>
-      <Name>AutoUpdater</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
